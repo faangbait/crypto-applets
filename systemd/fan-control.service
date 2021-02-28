@@ -1,0 +1,9 @@
+[Unit]
+Description=fan-control
+
+[Service]
+Type=simple
+ExecStart=/home/ss/Binaries/Cryptocurrencies/fan_control.sh
+
+[Install]
+WantedBy=multi-user.target
