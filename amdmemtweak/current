@@ -1,0 +1,24 @@
+GPU 0:  Vega 10 XL/XT [Radeon RX Vega 56/64]	pci:0000:04:00.0
+Memory state: 1000MHz
+Memory: Samsung HBM2
+Timing 1:	  CL: 20	  RAS: 33	  RCDRD: 16	  RCDWR: 10
+Timing 2:	  RCAb (RC): 47	  RCPb (RC): 47	  RPAb (RP): 14	  RPPb (RP): 14
+Timing 3:	  RRDS: 4	  RRDL: 6	  RTP: 5
+Timing 4:	  FAW: 16
+Timing 5:	  CWL: 7	  WTRS: 4	  WTRL: 9
+Timing 6:	  WR: 16
+Timing 7:	  RREFD: 8
+Timing 8:	  RDRDDD: 3	  RDRDSD: 2	  RDRDSC: 1	  RDRDSCL: 3
+Timing 9:	  WRWRDD: 3	  WRWRSD: 2	  WRWRSC: 1	  WRWRSCL: 3
+Timing 10:	  WRRD: 1	  RDWR: 19
+Timing 12:	  REF: 3900
+Timing 13:	  MRD: 8	  MOD: 15
+Timing 14:	  XS: 270
+Timing 16:	  XSMRS: 8
+Timing 17:	  PD: 8  	  CKSRE: 10	  CKSRX: 10
+Timing 20:	  RFCPB: 160	  STAG: 7
+Timing 21:	  XP: 8  	  CPDED: 2	  CKE: 8
+Timing 22:	  RDDATA: 19	  WRLAT: 5	  RDLAT: 14	  WRDATA: 1
+Timing 23:	  CKESTAG: 2
+RFC Timing:	  RFC: 260
+
