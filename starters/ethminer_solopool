@@ -1,0 +1,9 @@
+#!/bin/sh
+
+export GPU_MAX_ALLOC_PERCENT=100
+#export GPU_SINGLE_ALLOC_PERCENT=100
+export GPU_MAX_HEAP_SIZE=100
+export GPU_USE_SYNC_OBJECTS=1
+ 
+
+./ethminer -G -P stratum://hoffmann.invertedspectra.com:30303

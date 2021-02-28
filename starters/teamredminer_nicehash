@@ -1,0 +1,12 @@
+#!/bin/sh
+
+export GPU_MAX_ALLOC_PERCENT=100
+export GPU_SINGLE_ALLOC_PERCENT=100
+export GPU_MAX_HEAP_SIZE=100
+export GPU_USE_SYNC_OBJECTS=1
+
+if /home/ss/Binaries/Cryptocurrencies/profit_mgr.py; then
+	/home/ss/Binaries/teamredminer-v0.8.1-linux/teamredminer -a ethash -o stratum+tcp://daggerhashimoto.usa-east.nicehash.com:3353 -u 3CdoWz7F3RwtGSiKFf3rCUfatjyyeLy8r5 --eth_config=B648 --fan_control=55:75:50:30:90
+else
+    echo not profitable to mine now
+fi

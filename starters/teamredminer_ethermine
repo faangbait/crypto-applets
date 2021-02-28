@@ -1,0 +1,12 @@
+#!/bin/sh
+
+export GPU_MAX_ALLOC_PERCENT=100
+export GPU_SINGLE_ALLOC_PERCENT=100
+export GPU_MAX_HEAP_SIZE=100
+export GPU_USE_SYNC_OBJECTS=1
+
+if /home/ss/Binaries/Cryptocurrencies/profit_mgr.py; then
+	/home/ss/Binaries/teamredminer-v0.8.1-linux/teamredminer -a ethash -o stratum+tcp://us1.ethermine.org:4444 -u 0xe6367b2C4FE87536614f98701746fa2c7468f20c.ss -p x --eth_config=B648 --fan_control=55::75:50:30:90
+else
+    echo not profitable to mine now
+fi

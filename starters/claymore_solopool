@@ -1,0 +1,8 @@
+export GPU_FORCE_64BIT_PTR=0
+export GPU_MAX_HEAP_SIZE=100
+export GPU_USE_SYNC_OBJECTS=1
+export GPU_MAX_ALLOC_PERCENT=100
+export GPU_SINGLE_ALLOC_PERCENT=100
+
+#./ethdcrminer64 -epool us1.ethermine.org:4444 -ewal 0xe6367b2C4FE87536614f98701746fa2c7468f20c.ss -etha 1 -ethi 7 -esm 1 -dpool eu.luxor.tech:4445 -dwal DshEXLYEfHMB6iawR8ShpKtgquFPxDN3HL9 -dpsw x
+./ethdcrminer64 -epool http://localhost:8545 -ewal 0xe6367b2C4FE87536614f98701746fa2c7468f20c.ss -etha 1 -ethi 7 -esm 1
