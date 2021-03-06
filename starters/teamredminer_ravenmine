@@ -1,0 +1,15 @@
+#!/bin/sh
+
+export GPU_MAX_ALLOC_PERCENT=100
+export GPU_SINGLE_ALLOC_PERCENT=100
+export GPU_MAX_HEAP_SIZE=100
+export GPU_USE_SYNC_OBJECTS=1
+
+#/home/ss/Binaries/teamredminer-v0.8.1-linux/teamredminer -a kawpow -o stratum+tcp://us.ravenminer.com:3838 -u RVN_WALLET -u RYRiCeGbmMxg2KF5ppNXMq4ADHwDxhDVZo -p x --prog_config=B1024 --fan_control=55::75:65:30:95
+# TODO: Fix prog_config
+/home/ss/Binaries/teamredminer-v0.8.1-linux/teamredminer -a kawpow -o stratum+tcp://us.ravenminer.com:3838 -u RVN_WALLET -u RYRiCeGbmMxg2KF5ppNXMq4ADHwDxhDVZo -p x --fan_control=55::75:65:30:95
+
+#if /home/ss/Binaries/Cryptocurrencies/profit_mgr.py; then
+#else
+#    echo not profitable to mine now
+#fi
