@@ -23,7 +23,7 @@ while True:
 
 		"""
 		Available keys in 'api_fetch':
-		
+
 		id			string		Unique identifier of the coin.
 		coin			string		Coin's ticker.
 		name			string		Coin's name.
@@ -36,26 +36,26 @@ while True:
 		reward_block		real		Coin's block reward. If coin has no data on the block's reward, the block's reward is -1.
 		price			real		Coin's price in USD. If coin has no data on price, the price is -1.
 		volume			real		Coin's last 24h volume in USD. If coin has no data on volume, the volume is -1.
-		updated		integer	The UNIX timestamp of the last time the coin was updated.
+		updated			integer		The UNIX timestamp of the last time the coin was updated.
 		"""
-		
+
 		network_hashrate = api_fetch.get("network_hashrate")
 		difficulty = api_fetch.get("difficulty")
 		reward = api_fetch.get("reward")
 		reward_block = api_fetch.get("reward_block")
 		price = api_fetch.get("price")
 		volume = api_fetch.get("volume")
-		
+
 	except Exception as e:
 		print(f"Exception occurred while requesting current ETH price: {e}")
-	
+
 	eth_reward_per_hour = reward * MEGAHASH_RATE * 1000 * 1000
 	usd_reward_per_hour = eth_reward_per_hour*price
 	usd_reward_per_month = usd_reward_per_hour * 24 * 30.5
 	electric_cost_per_month = ELECTRIC_COST_PER_KWH*(WATTS_CONSUMED/1000)*24*30.5
 	usd_reward_per_month_less_costs = usd_reward_per_month - (usd_reward_per_month*FEES) - electric_cost_per_month
-	
-	os.system('cls' if os.name == 'nt' else 'clear')	
+
+	os.system('cls' if os.name == 'nt' else 'clear')
 	print(f"Monthly Profit:\t\t${usd_reward_per_month:.2f}")
 	print(f"")
 	print(f"Ethereum Price:\t\t${price:.2f}")
