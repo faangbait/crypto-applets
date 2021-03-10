@@ -1,3 +1,3 @@
 # Gnome shell extension for Argos
 
-Get Argos: p-e-w/Argos
+Get Argos: https://github.com/p-e-w/Argos
