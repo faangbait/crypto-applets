@@ -6,7 +6,8 @@ export GPU_MAX_HEAP_SIZE=100
 export GPU_USE_SYNC_OBJECTS=1
 
 if /home/ss/Binaries/Cryptocurrencies/profit_mgr.py; then
-	/home/ss/Binaries/teamredminer-v0.8.1-linux/teamredminer -a ethash -o stratum+tcp://daggerhashimoto.usa-east.nicehash.com:3353 -u 3CdoWz7F3RwtGSiKFf3rCUfatjyyeLy8r5 --eth_config=B648 --fan_control=66::75:65:20:95 --watchdog_script=/home/ss/Development/crypto-applets/watchdog.sh
+	/home/ss/Binaries/teamredminer-v0.8.1-linux/teamredminer -o stratum+tcp://daggerhashimoto.usa-east.nicehash.com:3353 $(cat /home/ss/Development/crypto-applets/configs/ethereum) --user=3CdoWz7F3RwtGSiKFf3rCUfatjyyeLy8r5
+	
 else
     echo not profitable to mine now
 fi

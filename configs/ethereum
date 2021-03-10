@@ -1,0 +1,11 @@
+ --algo=ethash
+ --user=0xe6367b2C4FE87536614f98701746fa2c7468f20c.ss
+ --pass=x
+ --eth_config=B648
+ --eth_ramp_up
+ --eth_hashwatch=2,1000
+ --fan_control=66::75:65:20:95
+ --watchdog_script=/home/ss/Development/crypto-applets/watchdog.sh
+ --log_file=/home/ss/Binaries/Cryptocurrencies/logs
+ --log_interval=60
+ --log_rotate=4M,16
