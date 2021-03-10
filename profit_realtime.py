@@ -60,13 +60,15 @@ while True:
 	print(f"")
 	print(f"Ethereum Price:\t\t${price:.2f}")
 	print(f"Reward Per Block:\t{reward_block:.2f} ETH")
-	# We divide the reward by the percentage of the block which are transaction fees.
-	# e.g. A 4ETH block would be a 2ETH block after London, so we would slash our monthly profit by /2
-	# e.g. A 6ETH block would be a 2ETH block after London, so we would slash our monthly profit by /3
 	print(f"")
 	print(f"Electricity Fees:\t${electric_cost_per_month:.2f} per Month")
 	print(f"Pool/Dev Fees:\t\t${usd_reward_per_month*FEES:.2f} per Month")
 	print(f"Profit After Costs:\t${usd_reward_per_month_less_costs:.2f} per Month")
+
+	# We divide the reward by the percentage of the block which are transaction fees.
+	# e.g. A 4ETH block would be a 2ETH block after London, so we would slash our monthly profit by /2
+	# e.g. A 6ETH block would be a 2ETH block after London, so we would slash our monthly profit by /3
+
 	print(f"Profit after London:\t${((usd_reward_per_month*(1-FEES))/(reward_block/2)) - electric_cost_per_month:.2f} per Month") 
 	sleep(10)
 
