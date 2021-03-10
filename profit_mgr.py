@@ -23,6 +23,7 @@ print(f"Per Hour: {reward_per_hour} {current.get('reward_unit')}")
 
 usd_per_hour = reward_per_hour*current.get("price")
 print(f"Per Hour: {usd_per_hour} USD")
+print(f"Per Day: {usd_per_hour*24} USD")
 
 pool_fee = usd_per_hour*FEES
 print(f"Pool/Dev Fee: {pool_fee} USD")
