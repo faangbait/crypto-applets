@@ -39,15 +39,17 @@ while True:
 		updated			integer		The UNIX timestamp of the last time the coin was updated.
 		"""
 
-		network_hashrate = api_fetch.get("network_hashrate")
-		difficulty = api_fetch.get("difficulty")
-		reward = api_fetch.get("reward")
-		reward_block = api_fetch.get("reward_block")
-		price = api_fetch.get("price")
-		volume = api_fetch.get("volume")
 
 	except Exception as e:
 		print(f"Exception occurred while requesting current ETH price: {e}")
+		api_fetch={}
+
+	network_hashrate = api_fetch.get("network_hashrate",1)
+	difficulty = api_fetch.get("difficulty",1)
+	reward = api_fetch.get("reward",1)
+	reward_block = api_fetch.get("reward_block",1)
+	price = api_fetch.get("price",1)
+	volume = api_fetch.get("volume",1)
 
 	eth_reward_per_hour = reward * MEGAHASH_RATE * 1000 * 1000
 	usd_reward_per_hour = eth_reward_per_hour*price
@@ -70,5 +72,5 @@ while True:
 	# e.g. A 6ETH block would be a 2ETH block after London, so we would slash our monthly profit by /3
 
 	print(f"Profit after London:\t${((usd_reward_per_month*(1-FEES))/(reward_block/2)) - electric_cost_per_month:.2f} per Month") 
-	sleep(10)
+	sleep(60)
 

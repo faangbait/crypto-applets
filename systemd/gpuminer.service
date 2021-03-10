@@ -1,0 +1,22 @@
+[Unit]
+Description=GPU Mining Software
+PartOf=cryptomining.service
+After=cryptomining.service
+After=amdgpu-timings.service
+After=amdgpu-clocks.service
+
+[Service]
+WorkingDirectory=/home/ss/Binaries/Cryptocurrencies
+Type=forking
+Restart=on-failure
+RestartSec=15
+TimeoutStartSec=80
+User=root
+
+ExecStart=/usr/bin/tmux new-session -s cryptomining -d '/bin/zsh -c /home/ss/Binaries/Cryptocurrencies/start'
+ExecStartPost=/usr/bin/tmux split-window -h '/bin/zsh -c /home/ss/Binaries/Cryptocurrencies/profit_realtime.py'
+ExecStop=/usr/bin/tmux kill-session -t cryptomining
+
+[Install]
+WantedBy=cryptomining.service
+

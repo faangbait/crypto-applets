@@ -1,15 +1,13 @@
 [Unit]
 Description=Set custom amdgpu clocks & voltages
-PartOf=cryptomining.service
-After=cryptomining.service
+After=multi-user.target rc-local.service systemd-user-sessions.service
 
 [Service]
-WorkingDirectory=/home/ss/Binaries/Cryptocurrencies
 Type=oneshot
+RemainAfterExit=yes
 ExecStart=/usr/bin/amdgpu-clocks
 ExecStop=/usr/bin/amdgpu-clocks restore
 ExecReload=/usr/bin/amdgpu-clocks
-RemainAfterExit=yes
 
 [Install]
-WantedBy=cryptomining.service
+WantedBy=multi-user.target

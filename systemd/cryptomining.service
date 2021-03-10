@@ -1,22 +1,14 @@
 [Unit]
-Description=CryptoMiner
+Description=Starts mining cryptocurrencies!
 Wants=network-online.target
 After=network-online.target nss-lookup.target
 
 [Service]
-WorkingDirectory=/home/ss/Binaries/Cryptocurrencies
-Type=forking
-Restart=on-failure
-RestartSec=5
-TimeoutStartSec=80
-User=root
+Type=oneshot
+ExecStart=/bin/true
+RemainAfterExit=yes
 
-ExecStartPre=/home/ss/Binaries/Cryptocurrencies/gfx_boost.sh
-ExecStart=/usr/bin/tmux new-session -s cryptomining -d '/bin/zsh -c /home/ss/Binaries/Cryptocurrencies/start.sh'
-ExecStartPost=/usr/bin/tmux split-window -h '/bin/zsh -c /home/ss/Binaries/Cryptocurrencies/profit_realtime.py'
-ExecStop=/usr/bin/tmux kill-session -t cryptomining
-ExecStopPost=/home/ss/Binaries/Cryptocurrencies/gfx_reset.sh
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=multi.user.target
 
